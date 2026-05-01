@@ -128,7 +128,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 #preloader {
   position: fixed;
   inset: 0;
-  background: var(--dark);
+  background: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +142,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 .preloader-logo {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: var(--white);
+  color: var(--primary);
   font-weight: 700;
   letter-spacing: 3px;
 }
@@ -150,7 +150,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 .preloader-bar {
   width: 200px;
   height: 2px;
-  background: rgba(255,255,255,0.1);
+  background: var(--gray-light);
   border-radius: 2px;
   margin: 20px auto 0;
   overflow: hidden;
@@ -714,10 +714,10 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   min-height: 480px;
 }
 .split-panel:first-child {
-  background: linear-gradient(135deg, #1a1019, #3d1030);
+  background: linear-gradient(135deg, #f7e0ea, #fdf0f5);
 }
 .split-panel:last-child {
-  background: linear-gradient(135deg, #1a1228, #2d1f5a);
+  background: linear-gradient(135deg, #e8f0f4, #f4f7f9);
 }
 .split-bg-img {
   position: absolute;
@@ -737,11 +737,11 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   font-family: var(--font-heading);
   font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 700;
-  color: var(--white);
+  color: var(--dark);
   line-height: 1.2;
   margin-bottom: 16px;
 }
-.split-desc { color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.7; margin-bottom: 28px; max-width: 380px; }
+.split-desc { color: var(--gray); font-size: 1rem; line-height: 1.7; margin-bottom: 28px; max-width: 380px; }
 
 /* ========== TESTIMONIALS ========== */
 .testimonials-section {
