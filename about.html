@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — StyleUrWay | Our Story</title>
+    <meta name="description"
+        content="Learn about StyleUrWay's mission to blend Indian ethnic and Western fashion. Discover our story, values and commitment to quality clothing.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">Style<span>Ur</span>Way</div>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <button class="back-to-top">↑</button>
+
+    <!-- CART OVERLAY & SIDEBAR -->
+    <div class="cart-overlay"></div>
+    <aside class="cart-sidebar">
+        <div class="cart-header">
+            <h2 class="cart-title">Your Cart 🛍️</h2>
+            <button class="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span class="cart-subtotal-label">Subtotal</span>
+                <span class="cart-subtotal-val" id="cartSubtotal">₹0</span>
+            </div>
+            <button class="btn btn-gold cart-checkout" onclick="showToast('🎉 Checkout coming soon!')">Proceed to
+                Checkout →</button>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Style<span>Ur</span>Way</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-icon-btn cart-toggle">🛒<span class="cart-badge"
+                        style="display:none;">0</span></button>
+            </div>
+            <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
+        <div class="container" style="position:relative;z-index:1;">
+            <div data-animate>
+                <div class="title-badge">Our Story</div>
+                <h1 class="section-title">Born from Two Worlds,<br>Designed for <em
+                        style="color:var(--gold-light);font-style:italic;">You</em></h1>
+                <p class="section-subtitle">Celebrating the beauty of Indian heritage and western modernity — because
+                    great style knows no boundaries.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION STATS -->
+    <section class="section-sm" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;">
+                <div data-animate>
+                    <div style="font-family:var(--font-heading);font-size:3rem;font-weight:700;color:var(--gold-light);"
+                        data-target="8" data-suffix="+">0+</div>
+                    <div
+                        style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:4px;text-transform:uppercase;letter-spacing:1px;">
+                        Years of Style</div>
+                </div>
+                <div data-animate data-animate-delay="1">
+                    <div style="font-family:var(--font-heading);font-size:3rem;font-weight:700;color:var(--gold-light);"
+                        data-target="5000" data-suffix="+">0+</div>
+                    <div
+                        style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:4px;text-transform:uppercase;letter-spacing:1px;">
+                        Unique Styles</div>
+                </div>
+                <div data-animate data-animate-delay="2">
+                    <div style="font-family:var(--font-heading);font-size:3rem;font-weight:700;color:var(--gold-light);"
+                        data-target="50000" data-suffix="+">0+</div>
+                    <div
+                        style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:4px;text-transform:uppercase;letter-spacing:1px;">
+                        Happy Customers</div>
+                </div>
+                <div data-animate data-animate-delay="3">
+                    <div style="font-family:var(--font-heading);font-size:3rem;font-weight:700;color:var(--gold-light);"
+                        data-target="15" data-suffix="+">0+</div>
+                    <div
+                        style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:4px;text-transform:uppercase;letter-spacing:1px;">
+                        Cities</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-story">
+                <div data-animate>
+                    <div class="about-story-img">
+                        <img src="images/indian_women.png" alt="StyleUrWay Indian Fashion Story" style="width:100%;height:100%;object-fit:cover;border-radius:20px;">
+                    </div>
+                </div>
+                <div data-animate data-animate-delay="2">
+                    <div class="title-badge">How It Began</div>
+                    <h2 class="section-title" style="margin-bottom:20px;">A Vision Born from<br>Cultural <span
+                            class="gold-accent">Passion</span></h2>
+                    <p style="color:var(--gray);line-height:1.9;margin-bottom:20px;font-size:1.05rem;">
+                        StyleUrWay was founded in 2016 by Nisha Kumar, a fashion enthusiast who grew up between two
+                        worlds — the rich, vibrant world of Indian ethnic wear and the sleek, confidence-inspiring realm
+                        of Western fashion.
+                    </p>
+                    <p style="color:var(--gray);line-height:1.9;margin-bottom:20px;font-size:1.05rem;">
+                        She often found herself wanting to embrace both identities simultaneously — and realized she
+                        wasn't alone. Millions of modern Indians share this dual cultural appreciation, yet found little
+                        in the fashion market that celebrated both.
+                    </p>
+                    <p style="color:var(--gray);line-height:1.9;margin-bottom:32px;font-size:1.05rem;">
+                        That's when StyleUrWay was born — a curated fashion destination where Banarasi silk meets French
+                        linen, where lehengas coexist beautifully with blazers, and where every Indian and Western style
+                        finds its perfect expression.
+                    </p>
+                    <a href="shop.html" class="btn btn-primary">Explore Our Collection →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section-padding" style="background:var(--gray-light);padding-top:0;">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:48px;" data-animate>
+                <div class="title-badge">What We Stand For</div>
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-subtitle">Every decision we make is guided by these principles</p>
+            </div>
+            <div class="about-values">
+                <div class="value-card" data-animate data-animate-delay="1">
+                    <div class="value-icon">🪡</div>
+                    <div class="value-title">Authentic Craft</div>
+                    <p class="value-desc">We partner directly with artisans across India to bring you genuinely
+                        handcrafted ethnic wear that preserves traditional techniques.</p>
+                </div>
+                <div class="value-card" data-animate data-animate-delay="2">
+                    <div class="value-icon">🌿</div>
+                    <div class="value-title">Sustainable Fashion</div>
+                    <p class="value-desc">We're committed to ethical sourcing, eco-friendly packaging, and promoting
+                        slow fashion that doesn't harm our planet.</p>
+                </div>
+                <div class="value-card" data-animate data-animate-delay="3">
+                    <div class="value-icon">💎</div>
+                    <div class="value-title">Premium Quality</div>
+                    <p class="value-desc">Every garment passes through strict quality checks. We believe you deserve
+                        fashion that lasts seasons, not just a single wear.</p>
+                </div>
+                <div class="value-card" data-animate data-animate-delay="1">
+                    <div class="value-icon">🤝</div>
+                    <div class="value-title">Inclusive Sizing</div>
+                    <p class="value-desc">Fashion is for every body. Our range includes sizes XS to 6XL across all
+                        categories to ensure everyone feels represented.</p>
+                </div>
+                <div class="value-card" data-animate data-animate-delay="2">
+                    <div class="value-icon">🛡️</div>
+                    <div class="value-title">Customer First</div>
+                    <p class="value-desc">15-day hassle-free returns, responsive support, and a secure shopping
+                        experience — your trust is our greatest asset.</p>
+                </div>
+                <div class="value-card" data-animate data-animate-delay="3">
+                    <div class="value-icon">🌍</div>
+                    <div class="value-title">Cultural Pride</div>
+                    <p class="value-desc">We celebrate Indian culture through fashion, ensuring artisans get fair wages
+                        and traditional textiles get the global stage they deserve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section-padding">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:48px;" data-animate>
+                <div class="title-badge">The People</div>
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">The passionate people behind StyleUrWay</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;" class="team-grid">
+
+                <div style="text-align:center;" data-animate data-animate-delay="1">
+                    <div
+                        style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:700;color:white;margin:0 auto 20px;font-family:var(--font-heading);box-shadow:var(--shadow-md);">
+                        N</div>
+                    <div
+                        style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--dark);margin-bottom:4px;">
+                        Nisha Kumar</div>
+                    <div
+                        style="color:var(--gold);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">
+                        Founder & CEO</div>
+                    <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;">Fashion visionary with 12+ years in
+                        the textile industry. Nisha's passion for blending cultures started StyleUrWay's beautiful
+                        journey.</p>
+                </div>
+
+                <div style="text-align:center;" data-animate data-animate-delay="2">
+                    <div
+                        style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:700;color:white;margin:0 auto 20px;font-family:var(--font-heading);box-shadow:var(--shadow-md);">
+                        A</div>
+                    <div
+                        style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--dark);margin-bottom:4px;">
+                        Aryan Mehta</div>
+                    <div
+                        style="color:var(--gold);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">
+                        Head of Design</div>
+                    <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;">With a degree from NIFT Delhi and
+                        international fashion experience, Aryan brings a fresh, contemporary perspective to every
+                        collection.</p>
+                </div>
+
+                <div style="text-align:center;" data-animate data-animate-delay="3">
+                    <div
+                        style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#1a3d6e,#3b6aa5);display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:700;color:white;margin:0 auto 20px;font-family:var(--font-heading);box-shadow:var(--shadow-md);">
+                        P</div>
+                    <div
+                        style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--dark);margin-bottom:4px;">
+                        Priya Joshi</div>
+                    <div
+                        style="color:var(--gold);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">
+                        Head of Artisan Relations</div>
+                    <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;">Priya works directly with over 200
+                        artisans across Varanasi, Jaipur, and Surat to source authentic handcrafted garments with fair
+                        trade practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div data-animate>
+                <div class="title-badge"
+                    style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.9);">
+                    Join Us</div>
+                <h2 class="section-title">Ready to Express Your Style?</h2>
+                <p class="section-subtitle">Explore thousands of styles — Indian, Western, and everything in between.
+                </p>
+                <div style="margin-top:32px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                    <a href="shop.html" class="btn btn-gold" style="font-size:1rem;">Shop the Collection →</a>
+                    <a href="contact.html" class="btn btn-outline-white" style="font-size:1rem;">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand-logo">Style<span>Ur</span>Way</div>
+                    <p class="footer-desc">Where every outfit is a statement. Indian traditions & modern western trends.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📸</a>
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📌</a>
+                        <a href="#" class="social-link">▶️</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-heading">Shop</div>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">Indian Wear</a></li>
+                        <li><a href="shop.html">Western Wear</a></li>
+                        <li><a href="shop.html">New Arrivals</a></li>
+                        <li><a href="shop.html">Sale</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Help</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 StyleUrWay. All rights reserved.</span>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a><a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHATBOT WIDGET -->
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-iframe-container" id="chatbotContainer">
+        <div class="chatbot-header">
+          <div class="chatbot-header-info">
+            <div class="chatbot-avatar">✦</div>
+            <div>
+              <div class="chatbot-name">StyleUrWay Assistant</div>
+              <div class="chatbot-status">Online · Here to help</div>
+            </div>
+          </div>
+          <button class="chatbot-close-btn" id="chatbotCloseBtn" aria-label="Close chat">✕</button>
+        </div>
+        <iframe
+          src="https://www.chatbase.co/chatbot-iframe/g3swUiZKuJugYTtOnreTq"
+          width="100%"
+          style="height:100%;min-height:420px;"
+          frameborder="0"
+          title="StyleUrWay Chatbot"
+        ></iframe>
+      </div>
+      <button class="chatbot-toggle-btn" id="chatbotToggleBtn" aria-label="Open chat assistant">
+        <span class="chatbot-btn-icon chatbot-icon-open">💬</span>
+        <span class="chatbot-btn-icon chatbot-icon-close" style="display:none;">✕</span>
+        <span class="chatbot-btn-label">Ask Us</span>
+      </button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      const chatbotToggleBtn = document.getElementById('chatbotToggleBtn');
+      const chatbotCloseBtn = document.getElementById('chatbotCloseBtn');
+      const chatbotContainer = document.getElementById('chatbotContainer');
+      const chatbotIconOpen = document.querySelector('.chatbot-icon-open');
+      const chatbotIconClose = document.querySelector('.chatbot-icon-close');
+      function openChatbot() { chatbotContainer.classList.add('active'); chatbotIconOpen.style.display='none'; chatbotIconClose.style.display='inline'; }
+      function closeChatbot() { chatbotContainer.classList.remove('active'); chatbotIconOpen.style.display='inline'; chatbotIconClose.style.display='none'; }
+      chatbotToggleBtn.addEventListener('click', () => { chatbotContainer.classList.contains('active') ? closeChatbot() : openChatbot(); });
+      chatbotCloseBtn.addEventListener('click', closeChatbot);
+    </script>
+    <style>
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</body>
+
+</html>

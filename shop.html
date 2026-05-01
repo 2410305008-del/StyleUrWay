@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — StyleUrWay | Indian & Western Clothing</title>
+    <meta name="description"
+        content="Browse our full collection of Indian ethnic wear and Western fashion at StyleUrWay. Filter by category, price and style.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">Style<span>Ur</span>Way</div>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- CART OVERLAY & SIDEBAR -->
+    <div class="cart-overlay"></div>
+    <aside class="cart-sidebar">
+        <div class="cart-header">
+            <h2 class="cart-title">Your Cart 🛍️</h2>
+            <button class="cart-close" aria-label="Close cart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span class="cart-subtotal-label">Subtotal</span>
+                <span class="cart-subtotal-val" id="cartSubtotal">₹0</span>
+            </div>
+            <small style="color:var(--gray);font-size:0.8rem;">Taxes and shipping calculated at checkout</small>
+            <button class="btn btn-gold cart-checkout" onclick="showToast('🎉 Checkout coming soon!')">Proceed to
+                Checkout →</button>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Style<span>Ur</span>Way</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-icon-btn cart-toggle" aria-label="Cart">
+                    🛒
+                    <span class="cart-badge" style="display:none;">0</span>
+                </button>
+            </div>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- SHOP HERO -->
+    <section class="shop-hero">
+        <div class="container">
+            <div data-animate>
+                <div class="title-badge">Our Collection</div>
+                <h1 class="section-title">Shop All Styles</h1>
+                <p class="section-subtitle">From vibrant sarees to sleek blazers — find your perfect look</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE STRIP -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span>Free Shipping on Orders Above ₹999</span>
+            <span>Indian Wear · Western Wear · Fusion Fashion</span>
+            <span>Easy Returns Within 15 Days</span>
+            <span>Secure Payment · 100% Authentic</span>
+            <span>Free Shipping on Orders Above ₹999</span>
+            <span>Indian Wear · Western Wear · Fusion Fashion</span>
+            <span>Easy Returns Within 15 Days</span>
+            <span>Secure Payment · 100% Authentic</span>
+        </div>
+    </div>
+
+    <!-- SHOP LAYOUT -->
+    <div class="container">
+        <div class="shop-layout">
+
+            <!-- SIDEBAR FILTERS -->
+            <aside class="shop-sidebar">
+                <div class="filter-panel">
+                    <div class="filter-panel-title">Filters</div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <div class="filter-group-label">Category</div>
+                        <div class="filter-checkbox-item">
+                            <input type="checkbox" id="f-all" class="shop-filter-check" checked>
+                            <label for="f-all">All Products</label>
+                        </div>
+                        <div class="filter-checkbox-item">
+                            <input type="checkbox" id="f-indian" class="shop-filter-check" data-cat="indian">
+                            <label for="f-indian">Indian Ethnic Wear</label>
+                        </div>
+                        <div class="filter-checkbox-item">
+                            <input type="checkbox" id="f-western" class="shop-filter-check" data-cat="western">
+                            <label for="f-western">Western Wear</label>
+                        </div>
+                        <div class="filter-checkbox-item">
+                            <input type="checkbox" id="f-women" class="shop-filter-check" data-cat="women">
+                            <label for="f-women">Women</label>
+                        </div>
+                        <div class="filter-checkbox-item">
+                            <input type="checkbox" id="f-men" class="shop-filter-check" data-cat="men">
+                            <label for="f-men">Men</label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="filter-group">
+                        <div class="filter-group-label">Price Range</div>
+                        <div class="price-range-wrap">
+                            <input type="range" id="priceRange" min="500" max="25000" value="25000" step="500">
+                            <div class="price-range-labels">
+                                <span>₹500</span>
+                                <span id="priceMaxLabel">₹25,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline" style="width:100%;justify-content:center;margin-top:8px;"
+                        onclick="resetShopFilters()">Clear Filters</button>
+                </div>
+
+                <!-- Promo Card -->
+                <div
+                    style="background:linear-gradient(135deg,var(--primary),#4a0f30);border-radius:var(--radius-lg);padding:24px;color:white;text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:8px;">🎁</div>
+                    <div style="font-family:var(--font-heading);font-size:1.2rem;font-weight:700;margin-bottom:8px;">
+                        Special Offer</div>
+                    <div style="font-size:0.85rem;opacity:0.8;margin-bottom:16px;">Get 15% OFF on your first order</div>
+                    <div
+                        style="background:rgba(255,255,255,0.15);border:1px dashed rgba(255,255,255,0.4);border-radius:8px;padding:10px;font-weight:700;letter-spacing:2px;">
+                        STYLE15</div>
+                </div>
+            </aside>
+
+            <!-- MAIN SHOP CONTENT -->
+            <div class="shop-main">
+                <div class="shop-toolbar">
+                    <div class="results-count" id="resultsCount">Showing 16 products</div>
+                    <select class="sort-select" id="shopSort" onchange="sortProducts(this.value)">
+                        <option value="default">Sort: Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                </div>
+
+                <div class="products-grid" id="shopProductsGrid">
+
+                    <!-- Indian Women -->
+                    <div class="shop-product-card product-card" data-category="indian women" data-price="3499"
+                        data-animate>
+                        <div class="product-img-wrap">
+                            <img src="images/saree.png" alt="Banarasi Silk Saree" loading="lazy">
+                            <span class="product-badge badge-new">New</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s1',name:'Banarasi Silk Saree',price:3499,category:'Indian Women',icon:'🥻',color:'linear-gradient(135deg,#8B2252,#c9608a)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s1',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Indian · Women</div>
+                            <div class="product-name">Banarasi Silk Saree</div>
+                            <div class="product-price-row"><span class="product-price">₹3,499</span><span
+                                    class="product-price-original">₹5,999</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(128)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="indian women" data-price="8999"
+                        data-animate data-animate-delay="1">
+                        <div class="product-img-wrap">
+                            <img src="images/lehenga.png" alt="Royal Embroidered Lehenga" loading="lazy">
+                            <span class="product-badge badge-trending">Trending</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s2',name:'Royal Embroidered Lehenga',price:8999,category:'Indian Women',icon:'👘',color:'linear-gradient(135deg,#3d2b6e,#7b5ea7)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s2',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Indian · Women</div>
+                            <div class="product-name">Royal Embroidered Lehenga</div>
+                            <div class="product-price-row"><span class="product-price">₹8,999</span><span
+                                    class="product-price-original">₹14,500</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(86)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="indian women" data-price="2199"
+                        data-animate data-animate-delay="2">
+                        <div class="product-img-wrap">
+                            <img src="images/saree.png" alt="Anarkali Suit" loading="lazy">
+                            <span class="product-badge badge-sale">Sale</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s3',name:'Anarkali Suit',price:2199,category:'Indian Women',icon:'🩱',color:'linear-gradient(135deg,#6e2b00,#c97b3a)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s3',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Indian · Women</div>
+                            <div class="product-name">Anarkali Suit Set</div>
+                            <div class="product-price-row"><span class="product-price">₹2,199</span><span
+                                    class="product-price-original">₹3,500</span></div>
+                            <div class="product-rating"><span class="stars">★★★★☆</span><span
+                                    class="rating-count">(72)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="indian women" data-price="4800"
+                        data-animate data-animate-delay="3">
+                        <div class="product-img-wrap">
+                            <img src="images/midi_dress.png" alt="Chanderi Silk Dupatta Set" loading="lazy">
+                            <span class="product-badge badge-new">New</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s4',name:'Chanderi Silk Dupatta Set',price:4800,category:'Indian Women',icon:'💃',color:'linear-gradient(135deg,#6e006e,#c93ac9)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s4',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Indian · Women</div>
+                            <div class="product-name">Chanderi Silk Dupatta Set</div>
+                            <div class="product-price-row"><span class="product-price">₹4,800</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(45)</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Western Women -->
+                    <div class="shop-product-card product-card" data-category="western women" data-price="1899"
+                        data-animate>
+                        <div class="product-img-wrap">
+                            <img src="images/midi_dress.png" alt="Floral Midi Dress" loading="lazy">
+                            <span class="product-badge badge-sale">Sale</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s5',name:'Floral Midi Dress',price:1899,category:'Western Women',icon:'👗',color:'linear-gradient(135deg,#1a6e4a,#3ba57b)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s5',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Western · Women</div>
+                            <div class="product-name">Floral Midi Dress</div>
+                            <div class="product-price-row"><span class="product-price">₹1,899</span><span
+                                    class="product-price-original">₹2,999</span></div>
+                            <div class="product-rating"><span class="stars">★★★★☆</span><span
+                                    class="rating-count">(214)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="western women" data-price="3299"
+                        data-animate data-animate-delay="1">
+                        <div class="product-img-wrap">
+                            <img src="images/blazer.png" alt="Structured Power Blazer" loading="lazy">
+                            <span class="product-badge badge-new">New</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s6',name:'Structured Power Blazer',price:3299,category:'Western Women',icon:'🧥',color:'linear-gradient(135deg,#1a3d6e,#3b6aa5)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s6',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Western · Women</div>
+                            <div class="product-name">Structured Power Blazer</div>
+                            <div class="product-price-row"><span class="product-price">₹3,299</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(67)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="western women" data-price="2450"
+                        data-animate data-animate-delay="2">
+                        <div class="product-img-wrap">
+                            <img src="images/blazer.png" alt="Boho Co-ord Set" loading="lazy">
+                            <span class="product-badge badge-trending">Trending</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s7',name:'Boho Co-ord Set',price:2450,category:'Western Women',icon:'👙',color:'linear-gradient(135deg,#6e4a00,#c99a3a)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s7',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Western · Women</div>
+                            <div class="product-name">Boho Co-ord Set</div>
+                            <div class="product-price-row"><span class="product-price">₹2,450</span><span
+                                    class="product-price-original">₹3,800</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(189)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="western women" data-price="1550"
+                        data-animate data-animate-delay="3">
+                        <div class="product-img-wrap">
+                            <img src="images/midi_dress.png" alt="Satin Wrap Top" loading="lazy">
+                            <span class="product-badge badge-sale">Sale</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s8',name:'Satin Wrap Top',price:1550,category:'Western Women',icon:'👚',color:'linear-gradient(135deg,#1a006e,#3a00c9)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s8',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Western · Women</div>
+                            <div class="product-name">Satin Wrap Top</div>
+                            <div class="product-price-row"><span class="product-price">₹1,550</span><span
+                                    class="product-price-original">₹2,499</span></div>
+                            <div class="product-rating"><span class="stars">★★★★☆</span><span
+                                    class="rating-count">(92)</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Indian Men -->
+                    <div class="shop-product-card product-card" data-category="indian men" data-price="12999"
+                        data-animate>
+                        <div class="product-img-wrap">
+                            <img src="images/sherwani.png" alt="Royal Wedding Sherwani" loading="lazy">
+                            <span class="product-badge badge-trending">Trending</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s9',name:'Royal Wedding Sherwani',price:12999,category:'Indian Men',icon:'🥋',color:'linear-gradient(135deg,#4a2000,#c9943a)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s9',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Indian · Men</div>
+                            <div class="product-name">Royal Wedding Sherwani</div>
+                            <div class="product-price-row"><span class="product-price">₹12,999</span><span
+                                    class="product-price-original">₹18,000</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(53)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="indian men" data-price="2499"
+                        data-animate data-animate-delay="1">
+                        <div class="product-img-wrap">
+                            <img src="images/kurta.png" alt="Silk Kurta Set" loading="lazy">
+                            <span class="product-badge badge-new">New</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s10',name:'Silk Kurta Set',price:2499,category:'Indian Men',icon:'👔',color:'linear-gradient(135deg,#1a3a1a,#4a8a4a)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s10',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Indian · Men</div>
+                            <div class="product-name">Silk Kurta Set</div>
+                            <div class="product-price-row"><span class="product-price">₹2,499</span><span
+                                    class="product-price-original">₹3,800</span></div>
+                            <div class="product-rating"><span class="stars">★★★★☆</span><span
+                                    class="rating-count">(142)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="indian men" data-price="7500"
+                        data-animate data-animate-delay="2">
+                        <div class="product-img-wrap">
+                            <img src="images/sherwani.png" alt="Maharaja Bandhgala Suit" loading="lazy">
+                            <span class="product-badge badge-new">New</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s11',name:'Bandhgala Suit',price:7500,category:'Indian Men',icon:'🧣',color:'linear-gradient(135deg,#001a4a,#003ac9)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s11',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Indian · Men</div>
+                            <div class="product-name">Maharaja Bandhgala Suit</div>
+                            <div class="product-price-row"><span class="product-price">₹7,500</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(34)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="indian men" data-price="1299"
+                        data-animate data-animate-delay="3">
+                        <div class="product-img-wrap">
+                            <img src="images/kurta.png" alt="Cotton Pathani Kurta" loading="lazy">
+                            <span class="product-badge badge-sale">Sale</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s12',name:'Cotton Pathani Kurta',price:1299,category:'Indian Men',icon:'🩴',color:'linear-gradient(135deg,#4a001a,#c9003a)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s12',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Indian · Men</div>
+                            <div class="product-name">Cotton Pathani Kurta</div>
+                            <div class="product-price-row"><span class="product-price">₹1,299</span><span
+                                    class="product-price-original">₹2,100</span></div>
+                            <div class="product-rating"><span class="stars">★★★★☆</span><span
+                                    class="rating-count">(210)</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Western Men -->
+                    <div class="shop-product-card product-card" data-category="western men" data-price="6499"
+                        data-animate>
+                        <div class="product-img-wrap">
+                            <img src="images/business_suit.png" alt="Slim Fit Business Suit" loading="lazy">
+                            <span class="product-badge badge-sale">Sale</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s13',name:'Slim Fit Business Suit',price:6499,category:'Western Men',icon:'🤵',color:'linear-gradient(135deg,#1c1c2e,#3a3a5c)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s13',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Western · Men</div>
+                            <div class="product-name">Slim Fit Business Suit</div>
+                            <div class="product-price-row"><span class="product-price">₹6,499</span><span
+                                    class="product-price-original">₹9,999</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(98)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="western men" data-price="1299"
+                        data-animate data-animate-delay="1">
+                        <div class="product-img-wrap">
+                            <img src="images/blazer.png" alt="Premium Polo T-Shirt" loading="lazy">
+                            <span class="product-badge badge-trending">Trending</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s14',name:'Premium Polo T-Shirt',price:1299,category:'Western Men',icon:'👕',color:'linear-gradient(135deg,#2e1a00,#8B5e1a)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s14',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Western · Men</div>
+                            <div class="product-name">Premium Polo T-Shirt</div>
+                            <div class="product-price-row"><span class="product-price">₹1,299</span></div>
+                            <div class="product-rating"><span class="stars">★★★★☆</span><span
+                                    class="rating-count">(305)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="western men" data-price="2999"
+                        data-animate data-animate-delay="2">
+                        <div class="product-img-wrap">
+                            <img src="images/business_suit.png" alt="Premium Linen Casual Shirt" loading="lazy">
+                            <span class="product-badge badge-new">New</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s15',name:'Linen Casual Shirt',price:2999,category:'Western Men',icon:'🥼',color:'linear-gradient(135deg,#0a2e00,#2a8B1a)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s15',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Western · Men</div>
+                            <div class="product-name">Premium Linen Casual Shirt</div>
+                            <div class="product-price-row"><span class="product-price">₹2,999</span><span
+                                    class="product-price-original">₹4,500</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(61)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="shop-product-card product-card" data-category="western men" data-price="3499"
+                        data-animate data-animate-delay="3">
+                        <div class="product-img-wrap">
+                            <img src="images/blazer.png" alt="Street Style Bomber Jacket" loading="lazy">
+                            <span class="product-badge badge-trending">Trending</span>
+                            <div class="product-actions-overlay">
+                                <button class="product-action-btn btn-add-cart"
+                                    onclick="addToCart({id:'s16',name:'Bomber Jacket',price:3499,category:'Western Men',icon:'🧤',color:'linear-gradient(135deg,#2e002e,#8B1a8B)'})">Add
+                                    to Cart</button>
+                                <button class="product-action-btn btn-wishlist"
+                                    onclick="toggleWishlist('s16',this)">♡</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category-tag">Western · Men</div>
+                            <div class="product-name">Street Style Bomber Jacket</div>
+                            <div class="product-price-row"><span class="product-price">₹3,499</span><span
+                                    class="product-price-original">₹5,200</span></div>
+                            <div class="product-rating"><span class="stars">★★★★★</span><span
+                                    class="rating-count">(177)</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- /.shop-main -->
+        </div><!-- /.shop-layout -->
+    </div><!-- /.container -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand-logo">Style<span>Ur</span>Way</div>
+                    <p class="footer-desc">Where every outfit is a statement. Indian traditions & modern western trends.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📸</a>
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📌</a>
+                        <a href="#" class="social-link">▶️</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-heading">Shop</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Indian Wear</a></li>
+                        <li><a href="#">Western Wear</a></li>
+                        <li><a href="#">Bridal Collection</a></li>
+                        <li><a href="#">Men's Wear</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Help</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 StyleUrWay. All rights reserved.</span>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a><a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHATBOT WIDGET -->
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-iframe-container" id="chatbotContainer">
+        <div class="chatbot-header">
+          <div class="chatbot-header-info">
+            <div class="chatbot-avatar">✦</div>
+            <div>
+              <div class="chatbot-name">StyleUrWay Assistant</div>
+              <div class="chatbot-status">Online · Here to help</div>
+            </div>
+          </div>
+          <button class="chatbot-close-btn" id="chatbotCloseBtn" aria-label="Close chat">✕</button>
+        </div>
+        <iframe
+          src="https://www.chatbase.co/chatbot-iframe/g3swUiZKuJugYTtOnreTq"
+          width="100%"
+          style="height:100%;min-height:420px;"
+          frameborder="0"
+          title="StyleUrWay Chatbot"
+        ></iframe>
+      </div>
+      <button class="chatbot-toggle-btn" id="chatbotToggleBtn" aria-label="Open chat assistant">
+        <span class="chatbot-btn-icon chatbot-icon-open">💬</span>
+        <span class="chatbot-btn-icon chatbot-icon-close" style="display:none;">✕</span>
+        <span class="chatbot-btn-label">Ask Us</span>
+      </button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      const chatbotToggleBtn = document.getElementById('chatbotToggleBtn');
+      const chatbotCloseBtn = document.getElementById('chatbotCloseBtn');
+      const chatbotContainer = document.getElementById('chatbotContainer');
+      const chatbotIconOpen = document.querySelector('.chatbot-icon-open');
+      const chatbotIconClose = document.querySelector('.chatbot-icon-close');
+      function openChatbot() { chatbotContainer.classList.add('active'); chatbotIconOpen.style.display='none'; chatbotIconClose.style.display='inline'; }
+      function closeChatbot() { chatbotContainer.classList.remove('active'); chatbotIconOpen.style.display='inline'; chatbotIconClose.style.display='none'; }
+      chatbotToggleBtn.addEventListener('click', () => { chatbotContainer.classList.contains('active') ? closeChatbot() : openChatbot(); });
+      chatbotCloseBtn.addEventListener('click', closeChatbot);
+    </script>
+    <script>
+        // Shop: checkbox filter
+        function applyCheckboxFilters() {
+            const allChecked = document.getElementById('f-all')?.checked;
+            const indianChecked = document.getElementById('f-indian')?.checked;
+            const westernChecked = document.getElementById('f-western')?.checked;
+            const womenChecked = document.getElementById('f-women')?.checked;
+            const menChecked = document.getElementById('f-men')?.checked;
+            const priceMax = parseInt(document.getElementById('priceRange')?.value || 99999);
+
+            let visible = 0;
+            document.querySelectorAll('.shop-product-card').forEach(card => {
+                const cat = card.dataset.category; // e.g. "indian women"
+                const price = parseInt(card.dataset.price);
+                let show = false;
+
+                if (allChecked) {
+                    show = true;
+                } else {
+                    const catMatch = (indianChecked && cat.includes('indian')) ||
+                        (westernChecked && cat.includes('western')) ||
+                        (womenChecked && cat.includes('women')) ||
+                        (menChecked && cat.includes('men'));
+                    show = catMatch;
+                    if (!indianChecked && !westernChecked && !womenChecked && !menChecked) show = true;
+                }
+
+                show = show && price <= priceMax;
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            const rc = document.getElementById('resultsCount');
+            if (rc) rc.textContent = `Showing ${visible} products`;
+        }
+
+        document.querySelectorAll('.shop-filter-check').forEach(cb => {
+            cb.addEventListener('change', function () {
+                if (this.id === 'f-all' && this.checked) {
+                    document.querySelectorAll('.shop-filter-check').forEach(c => { if (c !== this) c.checked = false; });
+                } else if (this.id !== 'f-all') {
+                    document.getElementById('f-all').checked = false;
+                }
+                applyCheckboxFilters();
+            });
+        });
+
+        document.getElementById('priceRange')?.addEventListener('input', function () {
+            document.getElementById('priceMaxLabel').textContent = '₹' + parseInt(this.value).toLocaleString('en-IN');
+            applyCheckboxFilters();
+        });
+
+        function resetShopFilters() {
+            document.getElementById('f-all').checked = true;
+            document.querySelectorAll('.shop-filter-check').forEach(c => { if (c.id !== 'f-all') c.checked = false; });
+            const pr = document.getElementById('priceRange');
+            if (pr) { pr.value = 25000; document.getElementById('priceMaxLabel').textContent = '₹25,000'; }
+            applyCheckboxFilters();
+        }
+
+        function sortProducts(val) {
+            const grid = document.getElementById('shopProductsGrid');
+            const cards = [...grid.querySelectorAll('.shop-product-card')];
+            cards.sort((a, b) => {
+                if (val === 'price-low') return parseInt(a.dataset.price) - parseInt(b.dataset.price);
+                if (val === 'price-high') return parseInt(b.dataset.price) - parseInt(a.dataset.price);
+                return 0;
+            });
+            cards.forEach(c => grid.appendChild(c));
+        }
+    </script>
+</body>
+
+</html>

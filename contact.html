@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — StyleUrWay</title>
+    <meta name="description"
+        content="Get in touch with StyleUrWay. We're here to help with orders, returns, sizing and more. Reach us by email, phone or visit our store.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">Style<span>Ur</span>Way</div>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <button class="back-to-top">↑</button>
+
+    <!-- CART OVERLAY & SIDEBAR -->
+    <div class="cart-overlay"></div>
+    <aside class="cart-sidebar">
+        <div class="cart-header">
+            <h2 class="cart-title">Your Cart 🛍️</h2>
+            <button class="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span class="cart-subtotal-label">Subtotal</span>
+                <span class="cart-subtotal-val" id="cartSubtotal">₹0</span>
+            </div>
+            <button class="btn btn-gold cart-checkout" onclick="showToast('🎉 Checkout coming soon!')">Proceed to
+                Checkout →</button>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Style<span>Ur</span>Way</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-icon-btn cart-toggle">🛒<span class="cart-badge"
+                        style="display:none;">0</span></button>
+            </div>
+            <button class="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+        <div class="container" style="position:relative;z-index:1;">
+            <div data-animate>
+                <div class="title-badge">Get in Touch</div>
+                <h1 class="section-title">We're Here to <em style="color:var(--gold-light);font-style:italic;">Help</em>
+                </h1>
+                <p class="section-subtitle">Questions about orders, sizing, or styling? Our team is happy to assist you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT GRID -->
+    <div class="container">
+        <div class="contact-grid">
+
+            <!-- CONTACT INFO -->
+            <div data-animate>
+                <div class="contact-info-card" style="margin-bottom:24px;">
+                    <h2 style="font-family:var(--font-heading);font-size:1.6rem;font-weight:700;margin-bottom:28px;">
+                        Contact Information</h2>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📍</div>
+                        <div>
+                            <div class="contact-info-label">Visit Us</div>
+                            <div class="contact-info-val">42, Fashion Street, Linking Road<br>Bandra West, Mumbai —
+                                400050</div>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📞</div>
+                        <div>
+                            <div class="contact-info-label">Call Us</div>
+                            <div class="contact-info-val">+91 98765 43210<br>Mon – Sat: 10 AM – 7 PM</div>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">✉️</div>
+                        <div>
+                            <div class="contact-info-label">Email Us</div>
+                            <div class="contact-info-val">hello@styleurway.com<br>support@styleurway.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">🕐</div>
+                        <div>
+                            <div class="contact-info-label">Working Hours</div>
+                            <div class="contact-info-val">Monday – Saturday: 10:00 AM – 7:00 PM<br>Sunday: 11:00 AM –
+                                5:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUICK LINKS -->
+                <div class="contact-info-card">
+                    <h3 style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;margin-bottom:16px;">
+                        Quick Help</h3>
+                    <div style="display:flex;flex-direction:column;gap:12px;">
+                        <a href="#"
+                            style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--gray-light);border-radius:10px;color:var(--dark);font-weight:500;transition:var(--transition);"
+                            onmouseover="this.style.background='var(--primary)';this.style.color='white'"
+                            onmouseout="this.style.background='var(--gray-light)';this.style.color='var(--dark)'">
+                            <span>📦</span> Track My Order
+                        </a>
+                        <a href="#"
+                            style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--gray-light);border-radius:10px;color:var(--dark);font-weight:500;transition:var(--transition);"
+                            onmouseover="this.style.background='var(--primary)';this.style.color='white'"
+                            onmouseout="this.style.background='var(--gray-light)';this.style.color='var(--dark)'">
+                            <span>🔄</span> Return or Exchange
+                        </a>
+                        <a href="#"
+                            style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--gray-light);border-radius:10px;color:var(--dark);font-weight:500;transition:var(--transition);"
+                            onmouseover="this.style.background='var(--primary)';this.style.color='white'"
+                            onmouseout="this.style.background='var(--gray-light)';this.style.color='var(--dark)'">
+                            <span>📏</span> Size Guide
+                        </a>
+                        <a href="#"
+                            style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--gray-light);border-radius:10px;color:var(--dark);font-weight:500;transition:var(--transition);"
+                            onmouseover="this.style.background='var(--primary)';this.style.color='white'"
+                            onmouseout="this.style.background='var(--gray-light)';this.style.color='var(--dark)'">
+                            <span>❓</span> FAQs
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT FORM -->
+            <div data-animate data-animate-delay="2">
+                <div class="contact-form">
+                    <h2 style="font-family:var(--font-heading);font-size:1.8rem;font-weight:700;margin-bottom:8px;">Send
+                        Us a Message</h2>
+                    <p style="color:var(--gray);margin-bottom:32px;font-size:0.95rem;">We typically respond within 24
+                        hours on business days.</p>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" class="form-control" placeholder="Priya" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" class="form-control" placeholder="Sharma" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" placeholder="you@email.com"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+91 98765 43210">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" class="form-control sort-select" style="height:auto;padding:14px 18px;"
+                                required>
+                                <option value="">— Select a topic —</option>
+                                <option>Order Enquiry</option>
+                                <option>Return / Exchange</option>
+                                <option>Product Information</option>
+                                <option>Sizing Help</option>
+                                <option>Wholesale / Bulk Order</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us how we can help you..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">Send Message ✦</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAP PLACEHOLDER -->
+    <div style="background:linear-gradient(135deg,var(--dark),#2d1030);padding:80px 0;text-align:center;">
+        <div class="container">
+            <div data-animate>
+                <div class="title-badge"
+                    style="margin-bottom:16px;background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);">
+                    Visit Us</div>
+                <h2
+                    style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--white);margin-bottom:12px;">
+                    Find Our Flagship Store</h2>
+                <p style="color:rgba(255,255,255,0.6);margin-bottom:32px;">42, Fashion Street, Linking Road, Bandra
+                    West, Mumbai</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:60px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;"
+                data-animate>
+                <div style="font-size:3rem;">🗺️</div>
+                <div style="color:rgba(255,255,255,0.7);">
+                    <div style="font-size:1.1rem;font-weight:600;color:white;">StyleUrWay Flagship Store</div>
+                    <div style="font-size:0.9rem;margin-top:4px;">Bandra West, Mumbai, Maharashtra 400050</div>
+                    <a href="#"
+                        style="display:inline-block;margin-top:12px;padding:10px 24px;background:var(--gold);color:white;border-radius:50px;font-weight:600;font-size:0.9rem;transition:var(--transition);"
+                        onmouseover="this.style.background='var(--gold-light)'"
+                        onmouseout="this.style.background='var(--gold)'">Get Directions →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand-logo">Style<span>Ur</span>Way</div>
+                    <p class="footer-desc">Where every outfit is a statement. Indian traditions & modern western trends.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📸</a>
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📌</a>
+                        <a href="#" class="social-link">▶️</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-heading">Shop</div>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">Indian Wear</a></li>
+                        <li><a href="shop.html">Western Wear</a></li>
+                        <li><a href="shop.html">New Arrivals</a></li>
+                        <li><a href="shop.html">Sale</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Help</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 StyleUrWay. All rights reserved.</span>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a><a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHATBOT WIDGET -->
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-iframe-container" id="chatbotContainer">
+        <div class="chatbot-header">
+          <div class="chatbot-header-info">
+            <div class="chatbot-avatar">✦</div>
+            <div>
+              <div class="chatbot-name">StyleUrWay Assistant</div>
+              <div class="chatbot-status">Online · Here to help</div>
+            </div>
+          </div>
+          <button class="chatbot-close-btn" id="chatbotCloseBtn" aria-label="Close chat">✕</button>
+        </div>
+        <iframe
+          src="https://www.chatbase.co/chatbot-iframe/g3swUiZKuJugYTtOnreTq"
+          width="100%"
+          style="height:100%;min-height:420px;"
+          frameborder="0"
+          title="StyleUrWay Chatbot"
+        ></iframe>
+      </div>
+      <button class="chatbot-toggle-btn" id="chatbotToggleBtn" aria-label="Open chat assistant">
+        <span class="chatbot-btn-icon chatbot-icon-open">💬</span>
+        <span class="chatbot-btn-icon chatbot-icon-close" style="display:none;">✕</span>
+        <span class="chatbot-btn-label">Ask Us</span>
+      </button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      const chatbotToggleBtn = document.getElementById('chatbotToggleBtn');
+      const chatbotCloseBtn = document.getElementById('chatbotCloseBtn');
+      const chatbotContainer = document.getElementById('chatbotContainer');
+      const chatbotIconOpen = document.querySelector('.chatbot-icon-open');
+      const chatbotIconClose = document.querySelector('.chatbot-icon-close');
+      function openChatbot() { chatbotContainer.classList.add('active'); chatbotIconOpen.style.display='none'; chatbotIconClose.style.display='inline'; }
+      function closeChatbot() { chatbotContainer.classList.remove('active'); chatbotIconOpen.style.display='inline'; chatbotIconClose.style.display='none'; }
+      chatbotToggleBtn.addEventListener('click', () => { chatbotContainer.classList.contains('active') ? closeChatbot() : openChatbot(); });
+      chatbotCloseBtn.addEventListener('click', closeChatbot);
+    </script>
+    <script>
+        document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            if (!firstName || !email || !subject || !message) {
+                showToast('⚠️ Please fill in all required fields.');
+                return;
+            }
+            showToast('✉️ Message sent successfully! We\'ll get back to you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
